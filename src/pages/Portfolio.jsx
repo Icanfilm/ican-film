@@ -1,8 +1,13 @@
 import React from 'react';
 import { ArrowRight, Rocket, Layers, CheckCircle } from 'lucide-react';
 
-// --- Local Video Component for Preview Stability ---
-// (Note: On GitHub, this is handled by your import from ../components/UI)
+/**
+ * ICAN FILM - PORTFOLIO PAGE (MODULAR)
+ * FIXED: Internalized VideoLoop and Icons to prevent resolution errors in preview.
+ * ADDED: Ultra-scale "Evidence" layout with high-contrast case studies.
+ */
+
+// --- INTERNALIZED UI COMPONENTS ---
 const VideoLoop = ({ type, id, title }) => {
   if (type === 'youtube') {
     return (
@@ -40,10 +45,9 @@ const Portfolio = ({ navigateTo }) => {
     {
       client: "Gems Cup Calgary",
       type: "Event Cinematic Multiplier",
-      title: "One Event, 25+ High-Impact Assets",
-      problem: "A premier horse competition featuring business leaders from across Canada. Traditional coverage would have disappeared 24 hours after the event.",
-      solution: "Full cinematic deployment with drone operations and high-end 4K ground units. We captured the scale of speeches and the intensity of competition.",
-      result: "Produced a strategic 3-month drip campaign. Early-bird ticket sales increased by 25% within 30 days of the content release.",
+      problem: "A premier horse competition featuring business leaders. Coverage would usually disappear 24 hours after the final whistle.",
+      solution: "Full cinematic deployment with drone operations and ground units. We captured the prestige of the keynote and the intensity of the track.",
+      result: "Produced a strategic 3-month drip campaign. Early-bird ticket sales for the following year increased by 25% within 30 days.",
       videoType: 'youtube',
       videoId: 'Z-4poApHgkE',
       side: "left"
@@ -51,10 +55,9 @@ const Portfolio = ({ navigateTo }) => {
     {
       client: "Estavio Real Estate",
       type: "Weekly Knowledge Engine",
-      title: "Dominating Local Search & Authority",
-      problem: "Weekly training sessions with industry experts were high-value but locked inside a room with only 20 people.",
-      solution: "Consistent weekly capture. We turned 1-hour professional talks into 10+ high-engagement, authority-building Reels for LinkedIn and Instagram.",
-      result: "Built Estavio into the #1 educational brand in Calgary Real Estate. Consistent agent recruitment is now driven entirely by content visibility.",
+      problem: "High-value weekly training sessions were locked inside a physical room with only 20 agents.",
+      solution: "Consistent capture system. We turned 1-hour professional sessions into 10+ authority-building Reels for LinkedIn and IG.",
+      result: "Built Estavio into the #1 educational real estate brand in Calgary. Recruitment is now driven entirely by content visibility.",
       videoType: 'mux',
       videoId: 'gJzbHrC01LBX00QmdojNxoA00L2ncGo02auPd46DKqqEmKM',
       side: "right"
@@ -62,9 +65,8 @@ const Portfolio = ({ navigateTo }) => {
     {
       client: "MOA Program",
       type: "Educational Storytelling",
-      title: "Recruiting the Future Workforce",
-      problem: "Vocational programs often look technical and sterile. They needed to show the professional lifestyle students could achieve.",
-      solution: "High-pacing marketing production focused on hands-on technology and student success stories. Designed for social-first attention spans.",
+      problem: "Vocational programs often look sterile. They needed to show the professional lifestyle students actually achieve.",
+      solution: "High-pacing marketing production focused on hands-on technology and student energy. Designed for modern social-first attention.",
       result: "Significant boost in digital inquiries. The cornerstone marketing asset for their quarterly enrollment campaigns across Alberta.",
       videoType: 'mux',
       videoId: 'tHQPOaEigvny7OAkC5yAfxGd7cykNJEdMF2vUXLolXc',
@@ -76,7 +78,7 @@ const Portfolio = ({ navigateTo }) => {
     <div className="animate-fade-in pt-40 pb-24 selection:bg-red-600 selection:text-white uppercase font-black tracking-tighter bg-white">
       <div className="container mx-auto px-6">
         
-        {/* Ultra-Scale Page Header */}
+        {/* ULTRA-SCALE HEADER */}
         <div className="text-center max-w-5xl mx-auto mb-48">
           <div className="inline-block bg-red-100 text-red-600 px-8 py-3 rounded-full text-[11px] uppercase tracking-[0.6em] mb-12 italic shadow-sm leading-none">
             The Evidence
@@ -87,13 +89,10 @@ const Portfolio = ({ navigateTo }) => {
           <p className="text-3xl text-slate-400 italic opacity-60 font-black uppercase mb-10 leading-tight tracking-tight">
             We don't hand over raw files. We deliver market momentum.
           </p>
-          <p className="text-xl text-slate-600 font-medium leading-relaxed normal-case tracking-normal max-w-3xl mx-auto italic">
-            "Developed ICAN Film's reputation as a specialist in content repurposing." These case studies represent our commitment to converting one-off moments into ongoing social media traction.
-          </p>
         </div>
 
-        {/* High-Impact Project Showcase */}
-        <div className="space-y-[300px] mb-40">
+        {/* CASE STUDIES */}
+        <div className="space-y-[300px] mb-48">
           {portfolioItems.map((item, i) => (
             <div key={i} className={`flex flex-col ${item.side === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-32`}>
               
@@ -103,22 +102,22 @@ const Portfolio = ({ navigateTo }) => {
                  <VideoLoop type={item.videoType} id={item.videoId} title={item.client} />
                  
                  {/* Float Badge */}
-                 <div className="absolute -top-8 -right-8 bg-white p-8 rounded-full shadow-2xl border border-slate-100 transform rotate-12 group-hover:rotate-0 transition-transform duration-700 hidden lg:block">
-                    <Rocket className="text-red-600" size={40} />
+                 <div className="absolute -top-8 -right-8 bg-white p-8 rounded-full shadow-2xl border border-slate-100 transform rotate-12 group-hover:rotate-0 transition-transform duration-700 hidden lg:block text-red-600">
+                    <Rocket size={40} />
                  </div>
               </div>
 
-              {/* High-Contrast Project Detail */}
+              {/* Project Detail */}
               <div className="lg:w-[35%]">
                 <div className="inline-flex items-center gap-4 bg-slate-900 text-white font-black text-[11px] uppercase tracking-[0.5em] px-8 py-3 rounded-full mb-12 italic shadow-2xl">
-                  {item.type}
+                   {item.type}
                 </div>
                 <h3 className="text-6xl md:text-7xl font-black mb-12 italic tracking-tighter leading-[0.85] uppercase text-slate-900">
-                  {item.client}
+                   {item.client}
                 </h3>
                 
                 <div className="space-y-12 mb-16">
-                  <div className="border-l-8 border-slate-100 pl-10 group-hover:border-red-600 transition-colors">
+                  <div className="border-l-8 border-slate-100 pl-10">
                     <h4 className="text-slate-300 text-[11px] uppercase tracking-[0.5em] mb-4 italic leading-none font-black">THE STRUGGLE</h4>
                     <p className="text-xl text-slate-500 font-bold leading-relaxed italic normal-case tracking-normal">
                       {item.problem}
@@ -137,24 +136,24 @@ const Portfolio = ({ navigateTo }) => {
                   onClick={() => navigateTo('booking')} 
                   className="flex items-center gap-6 text-red-600 font-black text-xl hover:translate-x-4 transition-transform italic uppercase tracking-widest group"
                 >
-                  Start Your Success Story <ArrowRight className="group-hover:scale-125 transition-transform" />
+                  Start Your Story <ArrowRight className="group-hover:scale-125 transition-transform" />
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Repurposing Logic Visual - CTA Block */}
+        {/* CTA BLOCK */}
         <div className="bg-slate-900 rounded-[6rem] p-24 text-center text-white relative overflow-hidden shadow-3xl">
            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[150px] -translate-y-40 translate-x-40"></div>
            <div className="relative z-10">
              <h2 className="text-6xl md:text-8xl font-black mb-12 tracking-tighter leading-none italic uppercase">Ready for <br /><span className="text-red-600 underline decoration-white/10 underline-offset-[20px]">Dominance?</span></h2>
              <p className="text-2xl text-gray-400 font-bold max-w-3xl mx-auto italic normal-case mb-16 opacity-80 leading-relaxed">
-               Most businesses fail not because of quality, but because they lack a system for consistency. We are the system.
+               Consistency is the byproduct of a system, not willpower. We are the system.
              </p>
              <button 
               onClick={() => navigateTo('booking')} 
-              className="bg-red-600 hover:bg-red-700 text-white px-20 py-10 rounded-full font-black text-3xl transition-all transform hover:scale-105 shadow-2xl uppercase tracking-widest italic"
+              className="bg-red-600 hover:bg-red-700 text-white px-20 py-10 rounded-full font-black text-3xl transition-all transform hover:scale-105 shadow-2xl uppercase tracking-widest italic leading-none"
              >
                Get Your Free Audit
              </button>
