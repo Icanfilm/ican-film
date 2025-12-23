@@ -2,9 +2,10 @@ import React from 'react';
 import { ArrowRight, Rocket, Layers, CheckCircle, Camera, ShieldCheck, BarChart3, Users } from 'lucide-react';
 
 /**
- * ICAN FILM - PORTFOLIO PAGE (FIXED MODULAR)
- * FIXED: Internalized VideoLoop and Icon components to resolve path resolution errors.
- * ADDED: Ultra-scale "Evidence" layout with high-contrast case studies.
+ * ICAN FILM - PORTFOLIO PAGE (FIXED & ROBUST)
+ * FIXED: Added pt-48 to prevent content from being hidden behind the fixed navigation.
+ * FIXED: Internalized CSS animations to prevent the "white screen" caused by missing opacity transitions.
+ * FIXED: Internalized UI components to resolve path resolution errors in modular environments.
  */
 
 // --- INTERNALIZED UI COMPONENTS (Fixes resolution issues in Canvas/Preview) ---
@@ -92,7 +93,20 @@ const Portfolio = ({ navigateTo }) => {
   ];
 
   return (
-    <div className="animate-fade-in pb-24 selection:bg-red-600 selection:text-white uppercase font-black tracking-tighter bg-white italic leading-none">
+    <div className="animate-fade-in pt-48 pb-24 selection:bg-red-600 selection:text-white uppercase font-black tracking-tighter bg-white italic leading-none min-h-screen">
+      <style>{`
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .shadow-3xl {
+          box-shadow: 0 50px 100px -20px rgba(0,0,0,0.25), 0 30px 60px -30px rgba(0,0,0,0.3);
+        }
+      `}</style>
+
       <div className="container mx-auto px-6">
         
         {/* ULTRA-SCALE HEADER */}
