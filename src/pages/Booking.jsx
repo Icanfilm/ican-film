@@ -4,7 +4,10 @@ import { ArrowRight, CheckCircle, Instagram, Linkedin, Youtube } from 'lucide-re
 // --- Local Icon Helper for Canvas Preview Stability ---
 const Icon = ({ name, size = 24, className = "" }) => {
   const icons = {
-    checkCircle: CheckCircle
+    checkCircle: CheckCircle,
+    instagram: Instagram,
+    linkedin: Linkedin,
+    youtube: Youtube
   };
   const LucideIcon = icons[name];
   return LucideIcon ? <LucideIcon size={size} className={className} /> : null;
@@ -16,8 +19,13 @@ const Booking = () => {
       <div className="container mx-auto px-6 max-w-7xl text-center lg:text-left">
         <div className="bg-white rounded-[6rem] shadow-3xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
           
-          {/* Brand/Trust Side */}
+          {/* Brand/Trust Side - Now with Production Imagery */}
           <div className="lg:w-2/5 bg-slate-900 p-20 md:p-32 text-white flex flex-col justify-between relative overflow-hidden text-center lg:text-left">
+             <img 
+               src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200&auto=format&fit=crop" 
+               className="absolute inset-0 w-full h-full object-cover opacity-20 brightness-50"
+               alt="Production Studio"
+             />
              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[150px] -translate-y-20 translate-x-20"></div>
              
              <div className="relative z-10">
@@ -42,14 +50,21 @@ const Booking = () => {
 
              <div className="pt-24 border-t border-white/10 mt-24 relative z-10">
                 <p className="text-[11px] font-black text-slate-500 uppercase tracking-[1em] mb-12 italic leading-none">Inquiry Hub</p>
-                <p className="text-4xl font-black tracking-tighter uppercase italic text-white hover:text-red-600 transition-colors cursor-pointer">
+                <p className="text-4xl font-black tracking-tighter uppercase italic text-white hover:text-red-600 transition-colors cursor-pointer mb-12">
                   HELLO@ICANFILM.CA
                 </p>
-                <p className="text-xs text-slate-500 font-bold uppercase tracking-[0.5em] mt-6 leading-none">Calgary, AB • Macleod Trail</p>
+                
+                {/* Social Connect Anchors */}
+                <div className="flex gap-10 justify-center lg:justify-start opacity-40 hover:opacity-100 transition-opacity">
+                   <Icon name="instagram" size={28} className="hover:text-red-600 cursor-pointer transition-colors" />
+                   <Icon name="linkedin" size={28} className="hover:text-red-600 cursor-pointer transition-colors" />
+                   <Icon name="youtube" size={28} className="hover:text-red-600 cursor-pointer transition-colors" />
+                </div>
+                <p className="text-xs text-slate-500 font-bold uppercase tracking-[0.5em] mt-10 leading-none">Calgary, AB • Macleod Trail</p>
              </div>
           </div>
 
-          {/* Form Side */}
+          {/* Form Side - High Contrast Professional Form */}
           <div className="lg:w-3/5 p-20 md:p-32">
             <form className="grid gap-20" onSubmit={(e) => e.preventDefault()}>
               <div className="grid md:grid-cols-2 gap-20">
