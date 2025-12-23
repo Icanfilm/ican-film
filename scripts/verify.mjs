@@ -7,12 +7,11 @@ const mainPath = path.join(root, "src", "main.jsx")
 
 console.log("VERIFY cwd:", root)
 console.log("VERIFY index.html exists:", fs.existsSync(indexPath))
-console.log("VERIFY src/main.jsx exists:", fs.existsSync(mainPath))
+console.log("VERIFY src main.jsx exists:", fs.existsSync(mainPath))
 
 if (fs.existsSync(indexPath)) {
   const html = fs.readFileSync(indexPath, "utf8")
-  const hasMain = html.includes("src/main.jsx")
-  console.log("VERIFY index.html references main.jsx:", hasMain)
+  console.log("VERIFY index.html contains src main.jsx:", html.includes("src/main.jsx"))
 }
 
 if (fs.existsSync(path.join(root, "src"))) {
@@ -20,3 +19,4 @@ if (fs.existsSync(path.join(root, "src"))) {
 } else {
   console.log("VERIFY no src folder found")
 }
+
