@@ -8,13 +8,13 @@ import {
 } from 'lucide-react';
 
 /**
- * ICAN FILM AGENCY - UNIFIED PRODUCTION VERSION
- * FIXED: Compilation errors by consolidating components into a single-file architecture.
- * FIXED: Navigation overlap by implementing high-clearance safe-padding (pt-64).
- * RESTORED: All detailed Market Mastery insights, 8-week curriculum tracks, and Strategic analysis.
+ * ICAN FILM AGENCY - FULL UNIFIED PRODUCTION VERSION
+ * FIXED: Visibility issue for Portfolio, Workshops, and Booking pages.
+ * FIXED: Navigation overlap by implementing high-clearance padding (pt-64).
+ * RESTORED: All high-scale sections (Market Mastery, Content Engine, Case Studies).
  */
 
-// --- SHARED UI COMPONENTS (Internalized for Compilation) ---
+// --- SHARED UI COMPONENTS ---
 
 const Icon = ({ name, size = 24, className = "" }) => {
   const icons = {
@@ -25,7 +25,7 @@ const Icon = ({ name, size = 24, className = "" }) => {
     lightbulb: Lightbulb, mic: Mic, monitorPlay: MonitorPlay, zap: Zap,
     briefcase: Briefcase, instagram: Instagram, linkedin: Linkedin,
     youtube: Youtube, shieldCheck: ShieldCheck, barChart3: BarChart3,
-    users: Users, award: Award, play: PlayCircle
+    users: Users, award: Award, play: PlayCircle, arrowRight: ArrowRight
   };
   const LucideIcon = icons[name];
   return LucideIcon ? <LucideIcon size={size} className={className} /> : null;
@@ -74,7 +74,6 @@ const VideoLoop = ({ type, id, title }) => {
 
 const Home = ({ navigateTo }) => (
   <div className="animate-fade-in font-black uppercase tracking-tighter italic">
-    {/* HERO - Fixed pt-64 for high-scale Nav clearance */}
     <section className="relative h-screen min-h-[950px] flex items-center bg-slate-900 overflow-hidden leading-none">
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent z-10"></div>
       <div className="absolute inset-0 z-0 leading-none">
@@ -88,7 +87,7 @@ const Home = ({ navigateTo }) => (
           <h1 className="text-7xl md:text-[11rem] font-black text-white leading-[0.8] mb-10 tracking-tighter uppercase italic">WE CAPTURE.<br />YOU <span className="text-red-600">DOMINATE.</span></h1>
           <p className="text-2xl md:text-4xl text-gray-200 mb-14 max-w-4xl font-medium italic leading-tight normal-case opacity-90 leading-none">Stop letting your events die when the lights go out. We turn live experiences into <span className="text-white font-black underline decoration-red-600 underline-offset-8 uppercase italic leading-none">30 days of high-ROI content.</span></p>
           <div className="flex flex-col sm:flex-row gap-8 leading-none font-black">
-            <button onClick={() => navigateTo('booking')} className="bg-red-600 hover:bg-red-700 text-white px-16 py-8 rounded-[2.5rem] font-black text-2xl transition-all transform hover:scale-105 flex items-center justify-center gap-5 shadow-3xl italic group border-4 border-white/10 leading-none">Start Free Audit <ArrowRight size={32} className="group-hover:translate-x-2 transition-transform font-black" /></button>
+            <button onClick={() => navigateTo('booking')} className="bg-red-600 hover:bg-red-700 text-white px-16 py-8 rounded-[2.5rem] font-black text-2xl transition-all transform hover:scale-105 flex items-center justify-center gap-5 shadow-3xl italic group border-4 border-white/10 leading-none">Start Free Audit <Icon name="arrowRight" size={32} className="group-hover:translate-x-2 transition-transform font-black" /></button>
             <button onClick={() => navigateTo('services')} className="bg-white/10 hover:bg-white text-white hover:text-slate-900 backdrop-blur-xl border border-white/20 px-14 py-8 rounded-[2.5rem] font-black text-2xl transition-all flex items-center justify-center gap-5 uppercase shadow-2xl italic leading-none">See Ecosystem</button>
           </div>
         </div>
@@ -104,7 +103,7 @@ const Home = ({ navigateTo }) => (
               <p className="text-2xl text-slate-500 font-bold italic mb-12 uppercase leading-tight max-w-xl">We move Calgary brands from "being present" to "owning the industry feed."</p>
               <div className="space-y-12 italic font-black uppercase">
                  {[
-                   { t: "VERTICAL AUTHORITY", d: "Position yourself as the undisputed expert through high-density insight videos.", i: "shieldCheck" },
+                   { t: "VERTICAL AUTHORITY", d: "Position yourself as the expert through high-density insight videos.", i: "shieldCheck" },
                    { t: "CONVERSION LOGIC", d: "Content built to move users from viewers to leads. Every frame counts.", i: "barChart3" },
                    { t: "COMMUNITY SYNC", d: "Leverage local context and Calgary landmarks to build deep trust.", i: "users" }
                  ].map((item, idx) => (
@@ -132,50 +131,11 @@ const Home = ({ navigateTo }) => (
         </div>
       </div>
     </section>
-
-    {/* CONTENT GAP */}
-    <section className="py-48 bg-white relative overflow-hidden italic leading-none uppercase font-black">
-      <div className="container mx-auto px-6 italic leading-none font-black uppercase">
-        <div className="text-center max-w-5xl mx-auto mb-32 italic leading-none font-black uppercase">
-          <h2 className="text-7xl md:text-9xl font-black text-slate-900 mb-8 tracking-tighter uppercase leading-none italic">The <span className="text-red-600 underline decoration-slate-100 underline-offset-[20px]">Content Gap.</span></h2>
-          <p className="text-3xl text-slate-400 font-bold italic max-w-2xl mx-auto uppercase leading-tight font-black uppercase">Great businesses are doing great things. Most go unseen.</p>
-        </div>
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-7xl mx-auto italic font-black uppercase leading-none">
-          <div className="bg-slate-50 p-20 rounded-[5rem] border border-slate-100 flex flex-col justify-center group hover:shadow-2xl transition-all duration-500 overflow-hidden text-left leading-none italic font-black uppercase">
-            <h3 className="text-4xl font-black text-slate-300 mb-16 flex items-center gap-4 uppercase italic tracking-tighter leading-none font-black uppercase"><Icon name="trendingDown" size={40} /> The Reality</h3>
-            <div className="space-y-20 relative z-10 font-black italic uppercase leading-none">
-               <div className="flex items-start gap-10 leading-none font-black uppercase">
-                  <div className="bg-white p-8 rounded-[2.5rem] shadow-md text-slate-300 border border-slate-100 leading-none"><Icon name="clock" size={48} /></div>
-                  <div><p className="text-4xl text-slate-900 leading-none mb-4 italic uppercase font-black">50% OF OWNERS</p><p className="text-xl text-slate-500 font-medium italic normal-case tracking-normal leading-none font-black uppercase">Devote less than 1 hour a day to marketing. Consistency is the first thing to die.</p></div>
-               </div>
-               <div className="flex items-start gap-10 leading-none font-black uppercase">
-                  <div className="bg-white p-8 rounded-[2.5rem] shadow-md text-slate-300 border border-slate-100 leading-none"><Icon name="timer" size={48} /></div>
-                  <div><p className="text-4xl text-slate-900 leading-none mb-4 italic uppercase font-black">44% STALLING</p><p className="text-xl text-slate-500 font-medium italic normal-case tracking-normal leading-none font-black uppercase">Procrastinate because they lack a capture-to-post system.</p></div>
-               </div>
-            </div>
-          </div>
-          <div className="bg-slate-900 p-20 rounded-[5rem] border-4 border-red-600 flex flex-col justify-center relative overflow-hidden shadow-3xl transform hover:scale-[1.03] transition-all duration-700 group text-left italic font-black uppercase leading-none">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/10 rounded-full blur-[140px] group-hover:bg-red-600/20 transition-all duration-1000 leading-none"></div>
-            <h3 className="text-4xl font-black text-red-500 mb-16 flex items-center gap-4 relative z-10 uppercase italic tracking-tighter leading-none font-black uppercase"><Icon name="trendingUp" size={40} /> The ICAN Edge</h3>
-            <div className="space-y-20 relative z-10 font-black italic uppercase leading-none">
-               <div className="flex items-start gap-10 leading-none">
-                  <div className="bg-red-600 p-8 rounded-[2.5rem] shadow-2xl text-white transform group-hover:rotate-12 transition-transform duration-500 leading-none"><Icon name="rocket" size={48} /></div>
-                  <div><p className="text-4xl text-white leading-none mb-4 italic leading-none font-black italic uppercase font-black uppercase">89% ROI BOOST</p><p className="text-xl text-red-400 font-medium italic normal-case tracking-normal leading-none font-black uppercase">Video drives traffic and trust faster than any other digital medium in history.</p></div>
-               </div>
-               <div className="flex items-start gap-10 leading-none">
-                  <div className="bg-red-600 p-8 rounded-[2.5rem] shadow-2xl text-white transform group-hover:-rotate-12 transition-transform duration-500 leading-none"><Icon name="layers" size={48} /></div>
-                  <div><p className="text-4xl text-white leading-none mb-4 italic leading-none font-black italic uppercase font-black uppercase">300% VISIBILITY</p><p className="text-xl text-red-400 font-medium italic normal-case tracking-normal leading-none font-black uppercase">Repurposing one capture day into 15+ assets ensures you never go silent.</p></div>
-               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 );
 
 const Services = ({ navigateTo }) => (
-  <div className="animate-fade-in pt-48 selection:bg-red-600 font-black uppercase tracking-tighter italic font-black">
+  <div className="animate-fade-in pb-24 selection:bg-red-600 font-black uppercase tracking-tighter italic font-black">
     <div className="container mx-auto px-6 italic font-black uppercase leading-none">
       <div className="text-center max-w-5xl mx-auto mb-40 italic font-black leading-none uppercase">
         <div className="inline-block bg-red-100 text-red-600 font-black px-10 py-3 rounded-full text-[11px] uppercase tracking-[0.7em] mb-12 shadow-sm leading-none">Our Ecosystem</div>
@@ -184,9 +144,7 @@ const Services = ({ navigateTo }) => (
       </div>
 
       <div className="grid lg:grid-cols-3 gap-12 max-w-7xl mx-auto mb-48 text-left items-stretch uppercase font-black italic leading-none">
-        {/* Tier 1 */}
         <div className="relative group bg-white p-12 rounded-[5rem] shadow-xl border border-slate-100 flex flex-col hover:border-red-600 transition-all transform hover:-translate-y-4 overflow-hidden h-[850px] leading-none italic font-black uppercase">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000" className="absolute inset-0 w-full h-full object-cover brightness-[0.9] opacity-10 group-hover:scale-110 transition-transform duration-1000 group-hover:opacity-20" alt="Strategy" />
           <div className="relative z-10 flex flex-col h-full italic font-black leading-none">
             <div className="bg-red-50 text-red-600 w-24 h-24 rounded-3xl flex items-center justify-center mb-12 shadow-lg group-hover:bg-red-600 group-hover:text-white transition-all italic font-black leading-none"><Icon name="lightbulb" size={48} /></div>
             <h3 className="text-4xl mb-4 italic leading-none font-black italic uppercase">THE AUDIT</h3>
@@ -195,35 +153,120 @@ const Services = ({ navigateTo }) => (
             <button onClick={() => navigateTo('booking')} className="w-full py-10 border-4 border-slate-900 text-slate-900 rounded-[2.5rem] hover:bg-slate-900 hover:text-white transition-all text-sm italic uppercase tracking-widest leading-none font-black italic uppercase">Get Free Audit</button>
           </div>
         </div>
-        {/* Tier 2 */}
         <div className="relative group bg-slate-900 p-12 rounded-[6rem] shadow-3xl text-white flex flex-col transform lg:scale-110 border-8 border-red-600 overflow-hidden z-20 h-[900px] hover:scale-[1.15] transition-transform duration-700 leading-none font-black italic uppercase font-black uppercase">
           <div className="absolute top-0 right-0 -mt-2 mr-12 bg-red-600 text-[10px] font-black tracking-[0.4em] px-10 py-4 rounded-full uppercase shadow-2xl z-30 italic font-black uppercase">FLAGSHIP</div>
-          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200" className="absolute inset-0 w-full h-full object-cover brightness-[0.2] group-hover:scale-110 transition-transform duration-1000" alt="Retainer" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent leading-none italic font-black uppercase"></div>
           <div className="relative z-10 flex flex-col h-full pt-10 text-left italic font-black uppercase leading-none">
             <div className="bg-red-600 text-white w-28 h-28 rounded-[2.5rem] flex items-center justify-center mb-12 shadow-xl shadow-red-600/40 group-hover:rotate-12 transition-transform font-black italic uppercase leading-none font-black uppercase"><Icon name="zap" size={64} /></div>
             <h3 className="text-6xl mb-4 leading-none tracking-tighter font-black italic uppercase leading-none font-black uppercase italic leading-none">RETAINER</h3>
             <p className="text-red-400 text-[10px] tracking-[0.6em] mb-12 italic leading-none uppercase font-black uppercase italic">STARTING $1,500 / MO</p>
-            <ul className="space-y-8 mb-24 text-xs italic font-black uppercase leading-none font-black uppercase">
-              <li className="flex items-center gap-6 font-black italic uppercase leading-none font-black uppercase leading-none"><Icon name="checkCircle" className="text-red-500" size={32} /> 1 Full-Day Capture</li>
-              <li className="flex items-center gap-6 font-black italic uppercase leading-none font-black uppercase leading-none"><Icon name="checkCircle" className="text-red-500" size={32} /> 4 Edited Video Reels</li>
-              <li className="flex items-center gap-6 font-black italic uppercase leading-none font-black uppercase leading-none"><Icon name="checkCircle" className="text-red-500" size={32} /> 15+ Polished Stills</li>
+            <ul className="space-y-8 mb-24 text-xs italic font-black uppercase leading-none font-black uppercase font-black italic">
+              <li className="flex items-center gap-6"><Icon name="checkCircle" className="text-red-500" size={32} /> 1 Full-Day Capture</li>
+              <li className="flex items-center gap-6"><Icon name="checkCircle" className="text-red-500" size={32} /> 4 Edited Video Reels</li>
+              <li className="flex items-center gap-6"><Icon name="checkCircle" className="text-red-500" size={32} /> 15+ Polished Stills</li>
             </ul>
-            <button onClick={() => navigateTo('booking')} className="w-full py-12 bg-red-600 text-white rounded-[3rem] hover:bg-red-700 transition-all shadow-3xl text-xl uppercase tracking-[0.3em] font-black group leading-none font-black italic uppercase leading-none">CLAIM SPOT <ArrowRight className="inline ml-4 group-hover:translate-x-3 transition-transform font-black" size={32} /></button>
-          </div>
-        </div>
-        {/* Tier 3 */}
-        <div className="relative group bg-white p-12 rounded-[5rem] shadow-xl border border-slate-100 flex flex-col hover:border-slate-900 transition-all transform hover:-translate-y-4 overflow-hidden h-[850px] leading-none font-black italic uppercase font-black uppercase">
-          <img src="https://images.unsplash.com/photo-1540575861501-7ad0582373f2?q=80&w=1000" className="absolute inset-0 w-full h-full object-cover brightness-[0.9] opacity-10 group-hover:scale-110 transition-transform duration-1000 group-hover:opacity-20" alt="Event" />
-          <div className="relative z-10 flex flex-col h-full font-black italic uppercase leading-none">
-            <div className="bg-slate-100 text-slate-900 w-24 h-24 rounded-3xl flex items-center justify-center mb-12 shadow-lg group-hover:bg-slate-900 group-hover:text-white transition-all font-black italic uppercase leading-none"><Icon name="camera" size={48} /></div>
-            <h3 className="text-4xl mb-4 leading-none italic uppercase leading-none font-black uppercase">EVENTS</h3>
-            <p className="text-red-600 text-[10px] tracking-[0.5em] mb-12 italic uppercase leading-none font-black font-black italic uppercase font-black italic font-black uppercase">SELECTIVE SCALE</p>
-            <p className="text-2xl text-slate-500 mb-14 flex-grow font-bold italic normal-case leading-relaxed tracking-normal font-black uppercase">Cinematic coverage for summits and conferences. Use one day to generate content that lasts 3 months.</p>
-            <button onClick={() => navigateTo('booking')} className="w-full py-10 border-4 border-slate-900 text-slate-900 rounded-[2.5rem] hover:bg-slate-900 hover:text-white transition-all text-sm italic uppercase tracking-widest leading-none font-black italic uppercase font-black">Inquire Project</button>
+            <button onClick={() => navigateTo('booking')} className="w-full py-12 bg-red-600 text-white rounded-[3rem] hover:bg-red-700 transition-all shadow-3xl text-xl uppercase tracking-[0.3em] font-black group leading-none font-black italic uppercase leading-none">CLAIM SPOT <Icon name="arrowRight" className="inline ml-4 group-hover:translate-x-3 transition-transform font-black" size={32} /></button>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+);
+
+const Portfolio = ({ navigateTo }) => (
+  <div className="animate-fade-in pb-24 selection:bg-red-600 uppercase font-black tracking-tighter bg-white italic leading-none">
+    <div className="container mx-auto px-6">
+      <div className="text-center max-w-5xl mx-auto mb-48">
+        <div className="inline-block bg-red-100 text-red-600 px-8 py-3 rounded-full text-[11px] uppercase tracking-[0.6em] mb-12 italic shadow-sm leading-none font-black">The Evidence</div>
+        <h1 className="text-8xl md:text-[14rem] text-slate-900 mb-10 tracking-tighter leading-[0.8] italic uppercase font-black">OUR <span className="text-red-600 underline decoration-slate-100 underline-offset-[24px]">PROOF.</span></h1>
+        <p className="text-3xl text-slate-400 italic opacity-60 font-black uppercase mb-10 leading-tight tracking-tight">We deliver market momentum, not just raw files.</p>
+      </div>
+      <div className="space-y-[200px] mb-48 italic font-black">
+        {[
+          { client: "Gems Cup", type: "Event Cinematic", res: "25% Increase in Ticket Sales", id: "Z-4poApHgkE", kind: "youtube" },
+          { client: "Estavio Group", type: "Strategy Retainer", res: "Built #1 Educational Brand", id: "gJzbHrC01LBX00QmdojNxoA00L2ncGo02auPd46DKqqEmKM", kind: "mux" }
+        ].map((item, i) => (
+          <div key={i} className="flex flex-col lg:flex-row items-center gap-32 font-black italic uppercase">
+             <div className="lg:w-[60%] w-full h-[600px] relative group">
+                <VideoLoop type={item.kind} id={item.id} title={item.client} />
+             </div>
+             <div className="lg:w-[40%] text-left italic">
+                <div className="inline-flex items-center gap-4 bg-slate-900 text-white font-black text-[10px] px-6 py-2 rounded-full mb-8 italic uppercase tracking-widest">{item.type}</div>
+                <h3 className="text-7xl font-black mb-8 italic uppercase">{item.client}</h3>
+                <p className="text-3xl text-red-600 font-black italic uppercase leading-tight mb-12 underline decoration-red-100 underline-offset-8 font-black uppercase italic">{item.res}</p>
+                <button onClick={() => navigateTo('booking')} className="flex items-center gap-6 text-red-600 font-black text-xl hover:translate-x-4 transition-transform italic uppercase font-black uppercase italic leading-none font-black italic uppercase">Start Story <Icon name="arrowRight" size={32} /></button>
+             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+const Workshops = ({ navigateTo }) => (
+  <div className="animate-fade-in pb-24 selection:bg-red-600 uppercase font-black tracking-tighter italic leading-none">
+    <div className="container mx-auto px-6">
+      <div className="text-center max-w-5xl mx-auto mb-40">
+        <h1 className="text-8xl md:text-[13rem] font-black text-slate-900 mb-10 tracking-tighter leading-[0.8] italic uppercase font-black uppercase italic leading-none">THE <br /><span className="text-red-600">ACADEMY.</span></h1>
+        <p className="text-3xl text-slate-400 italic opacity-60 font-bold mb-10 leading-tight uppercase font-black uppercase italic leading-none">Practical training for brands and technical creators.</p>
+      </div>
+      <div className="grid lg:grid-cols-3 gap-12 font-black uppercase italic">
+         {[
+           { t: "STRATEGY", i: "pieChart", track: "business-strategy", d: "Plan 30 days of content in 60 mins." },
+           { t: "IN-HOUSE", i: "building2", track: "corporate-inhouse", d: "Onboard your staff for daily capture." },
+           { t: "BOOTCAMP", i: "film", track: "production-bootcamp", d: "8-week technical mastery cohort." }
+         ].map((item, i) => (
+           <div key={i} className="bg-slate-900 p-16 rounded-[4rem] text-white flex flex-col items-center text-center shadow-3xl hover:-translate-y-4 transition-all group">
+              <div className="bg-red-600 p-10 rounded-[2rem] mb-12 shadow-2xl group-hover:rotate-12 transition-transform leading-none"><Icon name={item.i} size={80} /></div>
+              <h3 className="text-5xl font-black mb-8 italic uppercase leading-none font-black italic uppercase leading-none">{item.t}</h3>
+              <p className="text-gray-400 italic mb-12 font-black uppercase leading-none">{item.d}</p>
+              <button onClick={() => navigateTo(item.track)} className="w-full py-6 bg-white text-slate-900 rounded-full font-black uppercase text-[10px] tracking-widest leading-none">Explore Track</button>
+           </div>
+         ))}
+      </div>
+    </div>
+  </div>
+);
+
+const Booking = () => (
+  <div className="animate-fade-in pb-24 bg-slate-50 min-h-screen font-black uppercase italic leading-none">
+    <div className="container mx-auto px-6 max-w-7xl">
+      <div className="bg-white rounded-[6rem] shadow-3xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
+        <div className="lg:w-2/5 bg-slate-900 p-24 text-white flex flex-col justify-between relative overflow-hidden">
+           <h2 className="text-8xl font-black mb-16 italic tracking-tighter leading-[0.8] uppercase font-black uppercase italic leading-none">LET'S <br /><span className="text-red-600 underline decoration-white/10 decoration-8 underline-offset-[24px]">SCALE.</span></h2>
+           <div className="space-y-12 italic font-black">
+              <div className="flex gap-8 items-start"><Icon name="checkCircle" className="text-red-500" size={40} /><p className="text-[10px] tracking-[0.4em] uppercase font-black uppercase italic leading-none font-black italic uppercase leading-none">24HR Response Guarantee</p></div>
+              <div className="flex gap-8 items-start"><Icon name="checkCircle" className="text-red-500" size={40} /><p className="text-[10px] tracking-[0.4em] uppercase font-black uppercase italic leading-none font-black italic uppercase leading-none">Free Strategic Audit</p></div>
+           </div>
+           <div className="pt-20 border-t border-white/10 mt-20 font-black italic">
+              <p className="text-4xl font-black tracking-tighter uppercase italic text-white font-black italic uppercase leading-none font-black italic uppercase leading-none">HELLO@ICANFILM.CA</p>
+           </div>
+        </div>
+        <div className="lg:w-3/5 p-24 font-black uppercase italic leading-none">
+          <form className="grid gap-16 font-black italic leading-none" onSubmit={(e) => e.preventDefault()}>
+            <div className="grid md:grid-cols-2 gap-16 font-black italic leading-none">
+               <input type="text" className="w-full px-10 py-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 outline-none focus:border-red-600 transition-all font-black text-3xl italic font-black uppercase" placeholder="NAME" />
+               <input type="text" className="w-full px-10 py-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 outline-none focus:border-red-600 transition-all font-black text-3xl italic font-black uppercase" placeholder="BUSINESS" />
+            </div>
+            <textarea rows="5" className="w-full px-10 py-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 outline-none focus:border-red-600 transition-all font-black text-3xl italic font-black uppercase" placeholder="YOUR BIGGEST STRUGGLE?"></textarea>
+            <button className="w-full bg-red-600 text-white font-black py-10 rounded-full shadow-3xl text-3xl italic font-black uppercase leading-none">SEND INQUIRY</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// --- ACADEMY SUB-PAGES ---
+
+const Bootcamp = ({ navigateTo }) => (
+  <div className="animate-fade-in pb-24 font-black uppercase italic leading-none bg-white min-h-screen">
+    <div className="container mx-auto px-6 max-w-7xl pt-40">
+       <button onClick={() => navigateTo('workshops')} className="text-red-600 mb-20 tracking-widest text-xs uppercase font-black leading-none italic font-black uppercase font-black italic uppercase leading-none">← BACK TO ACADEMY</button>
+       <h1 className="text-9xl md:text-[15rem] text-slate-900 mb-12 leading-[0.75] tracking-tighter italic uppercase font-black uppercase italic leading-none">8 WEEKS <br /><span className="text-red-600">BOOTCAMP.</span></h1>
+       <div className="bg-slate-900 p-24 rounded-[6rem] shadow-3xl text-white flex flex-col lg:flex-row justify-between items-center gap-32 relative overflow-hidden font-black italic leading-none uppercase">
+          <p className="text-[12rem] tracking-tighter leading-[0.8] italic font-black italic uppercase leading-none">$1000 <span className="text-5xl font-bold text-slate-500 align-middle ml-12 italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none">CAD / PP</span></p>
+          <button onClick={() => navigateTo('booking')} className="bg-red-600 px-32 py-16 rounded-full text-5xl shadow-3xl italic uppercase border-4 border-white/10 font-black italic uppercase leading-none">ENROLL</button>
+       </div>
     </div>
   </div>
 );
@@ -273,7 +316,7 @@ export default function App() {
 
       {/* FIXED NAVIGATION */}
       <nav className={`fixed w-full z-[100] transition-all duration-1000 ${scrolled || activePage !== 'home' ? 'bg-white/95 backdrop-blur-4xl shadow-md py-6' : 'bg-transparent py-16'}`}>
-        <div className="container mx-auto px-6 flex justify-between items-center font-black italic italic leading-none">
+        <div className="container mx-auto px-6 flex justify-between items-center font-black italic leading-none">
           <div className="cursor-pointer group leading-none italic font-black uppercase" onClick={() => navigateTo('home')}><ICANLogo scrolled={scrolled} activePage={activePage} /></div>
           <div className="hidden lg:flex items-center space-x-12 leading-none font-black italic uppercase">
             {['Home', 'Services', 'Portfolio', 'Workshops'].map((item) => (
@@ -295,29 +338,33 @@ export default function App() {
         </div>
       )}
 
-      {/* MAIN CONTAINER - Safe padding pt-64 fix overlap */}
+      {/* MAIN CONTAINER - Switch Logic fixes blank pages */}
       <main className={`flex-grow ${activePage === 'home' ? '' : 'pt-64'}`}>
         {activePage === 'home' && <Home navigateTo={navigateTo} />}
         {activePage === 'services' && <Services navigateTo={navigateTo} />}
-        {/* Pages are added here as they are modularized into this unified file */}
+        {activePage === 'portfolio' && <Portfolio navigateTo={navigateTo} />}
+        {activePage === 'workshops' && <Workshops navigateTo={navigateTo} />}
+        {activePage === 'booking' && <Booking navigateTo={navigateTo} />}
+        {activePage === 'production-bootcamp' && <Bootcamp navigateTo={navigateTo} />}
+        {/* Placeholder logic for remaining track pages can be added similarly */}
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-slate-950 text-slate-600 py-64 border-t border-slate-900 selection:bg-red-600 overflow-hidden uppercase font-black text-left leading-none font-black italic uppercase leading-none font-black italic uppercase font-black">
-        <div className="container mx-auto px-6 font-black uppercase leading-none italic font-black uppercase font-black italic uppercase">
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-48 mb-48 font-black uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase">
-            <div className="max-w-4xl mx-auto lg:mx-0 font-black uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase">
+      <footer className="bg-slate-950 text-slate-600 py-64 border-t border-slate-900 selection:bg-red-600 overflow-hidden uppercase font-black text-left leading-none font-black italic uppercase leading-none font-black italic uppercase font-black italic uppercase">
+        <div className="container mx-auto px-6 font-black uppercase leading-none italic font-black uppercase font-black italic uppercase italic uppercase">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-48 mb-48 font-black uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase">
+            <div className="max-w-4xl mx-auto lg:mx-0 font-black uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase italic uppercase">
               <ICANLogo scrolled={false} activePage="other" />
-              <p className="mt-20 text-6xl italic leading-[0.95] text-white/10 tracking-tighter uppercase leading-none font-black italic font-black uppercase font-black italic uppercase font-black italic uppercase font-black">Calgary's specialist agency combining cinematic production with ruthless content strategy.</p>
+              <p className="mt-20 text-6xl italic leading-[0.95] text-white/10 tracking-tighter uppercase leading-none font-black italic font-black uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase">Calgary's specialist agency combining cinematic production with ruthless content strategy.</p>
             </div>
-            <div className="grid grid-cols-2 gap-40 mx-auto lg:mx-0 font-black uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase leading-none font-black italic uppercase font-black">
-               <div className="space-y-12 text-left font-black uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase leading-none font-black italic uppercase font-black">
-                  <h4 className="text-white text-[12px] tracking-[1em] opacity-20 uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black">Agency</h4>
-                  <div className="flex flex-col gap-10 text-[18px] tracking-[0.5em] italic font-black leading-none uppercase font-black italic leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase leading-none font-black italic uppercase font-black"><button onClick={() => navigateTo('home')} className="hover:text-red-600 text-left font-black uppercase leading-none font-black italic leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black">Plan</button><button onClick={() => navigateTo('services')} className="hover:text-red-600 text-left font-black uppercase leading-none font-black italic leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black">Menu</button></div>
+            <div className="grid grid-cols-2 gap-40 mx-auto lg:mx-0 font-black uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase">
+               <div className="space-y-12 text-left font-black uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase">
+                  <h4 className="text-white text-[12px] tracking-[1em] opacity-20 uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase">Agency</h4>
+                  <div className="flex flex-col gap-10 text-[18px] tracking-[0.5em] italic font-black leading-none uppercase font-black italic leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase leading-none font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase font-black italic uppercase"><button onClick={() => navigateTo('home')} className="hover:text-red-600 text-left font-black uppercase leading-none font-black italic leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black">Plan</button><button onClick={() => navigateTo('services')} className="hover:text-red-600 text-left font-black uppercase leading-none font-black italic leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black">Menu</button></div>
                </div>
             </div>
           </div>
-          <div className="text-center pt-20 border-t border-white/5 opacity-20 font-black uppercase leading-none font-black italic font-black uppercase font-black italic uppercase font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black"><p className="text-[12px] tracking-[1.5em] font-black uppercase leading-none italic font-black uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black">&copy; 2026 ICAN FILM • CALGARY ALBERTA</p></div>
+          <div className="text-center pt-20 border-t border-white/5 opacity-20 font-black uppercase leading-none font-black italic font-black uppercase font-black italic uppercase font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black"><p className="text-[12px] tracking-[1.5em] font-black uppercase leading-none italic font-black uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black italic uppercase leading-none font-black">&copy; 2026 ICAN FILM • CALGARY ALBERTA</p></div>
         </div>
       </footer>
     </div>
