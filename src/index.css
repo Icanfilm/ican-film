@@ -4,35 +4,64 @@
 
 /**
  * ICAN FILM - GLOBAL BRAND STYLES
- * This file handles the base Tailwind imports and custom brand overrides.
+ * This file handles the baseline Tailwind setup and custom high-scale 
+ * agency branding rules.
  */
 
-/* Custom selection styling to match the ICAN brand red */
+/* Custom selection color to match ICAN red */
 ::selection {
   background: #ef4444; /* Tailwind red-600 */
   color: white;
 }
 
-/* Base body styles to ensure layout stability */
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   background-color: white;
   scroll-behavior: smooth;
+  /* Premium typography baseline */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* High-scale shadow token for the premium UI cards */
+/* High-Scale Elevation Token */
 .shadow-3xl {
   box-shadow: 0 50px 100px -20px rgba(0,0,0,0.25), 0 30px 60px -30px rgba(0,0,0,0.3);
 }
 
-/* Custom fade-in for smooth page transitions */
+/* Page Transition Animations */
 @keyframes fade-in { 
-  from { opacity: 0; transform: translateY(20px); } 
+  from { opacity: 0; transform: translateY(30px); } 
   to { opacity: 1; transform: translateY(0); } 
 }
 
 .animate-fade-in { 
   animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+}
+
+/* Hero Background Motion */
+@keyframes slow-zoom { 
+  from { transform: scale(1); } 
+  to { transform: scale(1.1); } 
+}
+
+.animate-slow-zoom { 
+  animation: slow-zoom 20s ease-in-out infinite alternate; 
+}
+
+/* Custom Utilities for High-Scale Typography */
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .shadow-3xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
 }
