@@ -1,5 +1,5 @@
 import React from "react"
-import { motion } from "framer-motion"
+
 import HeroSection from "../Components/home/HeroSection"
 import StatsSection from "../Components/home/StatsSection"
 import TargetMarketSection from "../Components/home/TargetMarketSection"
@@ -13,7 +13,6 @@ import PricingSection from "../Components/home/PricingSection"
 import TeamSection from "../Components/home/TeamSection"
 import CTASection from "../Components/home/CTASection"
 import Footer from "../Components/home/Footer"
-
 
 export default function Home() {
   return (
@@ -32,5 +31,6 @@ export default function Home() {
       <CTASection />
       <Footer />
     </div>
-  );
+  )
 }
+
