@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/**
+ * ICAN FILM - GLOBAL BRAND STYLES
+ * This file handles the base Tailwind imports and custom brand overrides.
+ */
+
+/* Custom selection styling to match the ICAN brand red */
+::selection {
+  background: #ef4444; /* Tailwind red-600 */
+  color: white;
+}
+
+/* Base body styles to ensure layout stability */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+/* High-scale shadow token for the premium UI cards */
+.shadow-3xl {
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.25), 0 30px 60px -30px rgba(0,0,0,0.3);
+}
+
+/* Custom fade-in for smooth page transitions */
+@keyframes fade-in { 
+  from { opacity: 0; transform: translateY(20px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+
+.animate-fade-in { 
+  animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+}
