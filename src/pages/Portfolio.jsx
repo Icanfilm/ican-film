@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ArrowRight, Rocket, Layers, CheckCircle, Camera, ShieldCheck, BarChart3, Users } from 'lucide-react';
 
 /**
- * ICAN FILM - PORTFOLIO PAGE (FIXED & ROBUST)
- * FIXED: Added pt-48 to prevent content from being hidden behind the fixed navigation.
- * FIXED: Internalized CSS animations to prevent the "white screen" caused by missing opacity transitions.
- * FIXED: Internalized UI components to resolve path resolution errors in modular environments.
+ * ICAN FILM - PORTFOLIO PAGE (ULTRA-STABLE VERSION)
+ * FIXED: Visibility issue by defaulting to opacity-100 and ensuring styles are locally injected.
+ * FIXED: Navigation overlap with pt-48 clearance.
+ * FIXED: Corrected Icon mapping for internal components.
  */
 
 // --- INTERNALIZED UI COMPONENTS (Fixes resolution issues in Canvas/Preview) ---
@@ -18,7 +18,8 @@ const Icon = ({ name, size = 24, className = "" }) => {
     shieldCheck: ShieldCheck,
     barChart3: BarChart3,
     users: Users,
-    checkCircle: CheckCircle
+    checkCircle: CheckCircle,
+    arrowRight: ArrowRight
   };
   const LucideIcon = icons[name];
   return LucideIcon ? <LucideIcon size={size} className={className} /> : null;
@@ -27,7 +28,7 @@ const Icon = ({ name, size = 24, className = "" }) => {
 const VideoLoop = ({ type, id, title }) => {
   if (type === 'youtube') {
     return (
-      <div className="relative w-full h-full overflow-hidden rounded-[3rem] shadow-3xl bg-black border border-white/5 group">
+      <div className="relative w-full h-full overflow-hidden rounded-[3rem] shadow-2xl bg-black border border-white/5 group">
         <iframe
           className="absolute top-1/2 left-1/2 w-[115%] h-[115%] -translate-x-1/2 -translate-y-1/2 pointer-events-none object-cover brightness-90 contrast-110"
           src={`https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&controls=0&modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1`}
@@ -40,7 +41,7 @@ const VideoLoop = ({ type, id, title }) => {
   }
 
   return (
-    <div className="relative w-full h-full overflow-hidden rounded-[3rem] shadow-3xl bg-slate-900 border border-white/5 group">
+    <div className="relative w-full h-full overflow-hidden rounded-[3rem] shadow-2xl bg-slate-900 border border-white/5 group">
       <video
         autoPlay
         muted
@@ -59,6 +60,11 @@ const VideoLoop = ({ type, id, title }) => {
 // --- MAIN PAGE COMPONENT ---
 
 const Portfolio = ({ navigateTo }) => {
+  // Debug log to verify component mounting in the console
+  useEffect(() => {
+    console.log("ICAN Portfolio Component Mounted Successfully");
+  }, []);
+
   const portfolioItems = [
     {
       client: "Gems Cup Calgary",
@@ -93,14 +99,15 @@ const Portfolio = ({ navigateTo }) => {
   ];
 
   return (
-    <div className="animate-fade-in pt-48 pb-24 selection:bg-red-600 selection:text-white uppercase font-black tracking-tighter bg-white italic leading-none min-h-screen">
+    <div className="opacity-100 animate-fade-in pt-48 pb-24 selection:bg-red-600 selection:text-white uppercase font-black tracking-tighter bg-white italic leading-none min-h-screen">
+      {/* Explicit style injection for reliability */}
       <style>{`
-        @keyframes fade-in {
-          from { opacity: 0; transform: translateY(30px); }
+        @keyframes portfolio-fade {
+          from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in {
-          animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          animation: portfolio-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .shadow-3xl {
           box-shadow: 0 50px 100px -20px rgba(0,0,0,0.25), 0 30px 60px -30px rgba(0,0,0,0.3);
