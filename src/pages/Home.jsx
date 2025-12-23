@@ -1,18 +1,19 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import HeroSection from '../components/home/HeroSection';
-import StatsSection from '../components/home/StatsSection';
-import TargetMarketSection from '../components/home/TargetMarketSection';
-import ValuePropositionSection from '../components/home/ValuePropositionSection';
-import ServicesSection from '../components/home/ServicesSection';
-import BehindTheScenesSection from '../components/home/BehindTheScenesSection';
-import ProcessSection from '../components/home/ProcessSection';
-import CaseStudySection from '../components/home/CaseStudySection';
-import TestimonialsSection from '../components/home/TestimonialsSection';
-import PricingSection from '../components/home/PricingSection';
-import TeamSection from '../components/home/TeamSection';
-import CTASection from '../components/home/CTASection';
-import Footer from '../components/home/Footer';
+import React from "react"
+import { motion } from "framer-motion"
+import HeroSection from "../Components/home/HeroSection"
+import StatsSection from "../Components/home/StatsSection"
+import TargetMarketSection from "../Components/home/TargetMarketSection"
+import ValuePropositionSection from "../Components/home/ValuePropositionSection"
+import ServicesSection from "../Components/home/ServicesSection"
+import BehindTheScenesSection from "../Components/home/BehindTheScenesSection"
+import ProcessSection from "../Components/home/ProcessSection"
+import CaseStudySection from "../Components/home/CaseStudySection"
+import TestimonialsSection from "../Components/home/TestimonialsSection"
+import PricingSection from "../Components/home/PricingSection"
+import TeamSection from "../Components/home/TeamSection"
+import CTASection from "../Components/home/CTASection"
+import Footer from "../Components/home/Footer"
+
 
 export default function Home() {
   return (
